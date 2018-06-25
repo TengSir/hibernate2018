@@ -26,5 +26,7 @@
 
         <!--让hibernate知道我配置的哪些映射文件在哪里-->
         <mapping resource="User.hbm.xml"/>
+        <mapping resource="Orderitems.hbm.xml"/>
+        <mapping resource="Orders.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
