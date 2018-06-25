@@ -4,8 +4,6 @@ public class Orderitems {
     private Integer itemsid;
     private Integer productid;
     private Integer count;
-    private Double price;
-    private Integer orderid;
 
     public Integer getItemsid() {
         return itemsid;
@@ -47,29 +45,28 @@ public class Orderitems {
         this.orderid = orderid;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    private Double price;
+    private Integer orderid;
 
-        Orderitems that = (Orderitems) o;
+    public Orderitems(Integer itemsid, Integer productid, Integer count, Double price, Integer orderid) {
+        this.itemsid = itemsid;
+        this.productid = productid;
+        this.count = count;
+        this.price = price;
+        this.orderid = orderid;
+    }
 
-        if (itemsid != null ? !itemsid.equals(that.itemsid) : that.itemsid != null) return false;
-        if (productid != null ? !productid.equals(that.productid) : that.productid != null) return false;
-        if (count != null ? !count.equals(that.count) : that.count != null) return false;
-        if (price != null ? !price.equals(that.price) : that.price != null) return false;
-        if (orderid != null ? !orderid.equals(that.orderid) : that.orderid != null) return false;
-
-        return true;
+    public Orderitems() {
     }
 
     @Override
-    public int hashCode() {
-        int result = itemsid != null ? itemsid.hashCode() : 0;
-        result = 31 * result + (productid != null ? productid.hashCode() : 0);
-        result = 31 * result + (count != null ? count.hashCode() : 0);
-        result = 31 * result + (price != null ? price.hashCode() : 0);
-        result = 31 * result + (orderid != null ? orderid.hashCode() : 0);
-        return result;
+    public String toString() {
+        return "Orderitems{" +
+                "itemsid=" + itemsid +
+                ", productid=" + productid +
+                ", count=" + count +
+                ", price=" + price +
+                ", orderid=" + orderid +
+                '}';
     }
 }

@@ -918,131 +918,143 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="231" parent="3" name="orderitems"/>
-    <table id="232" parent="3" name="orders">
-      <Comment>订单信息表</Comment>
-    </table>
-    <table id="233" parent="3" name="users"/>
-    <column id="234" parent="231" name="itemsid">
+    <table id="231" parent="3" name="address"/>
+    <table id="232" parent="3" name="orderitems"/>
+    <table id="233" parent="3" name="orders"/>
+    <table id="234" parent="3" name="users"/>
+    <column id="235" parent="231" name="addid">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="235" parent="231" name="productid">
+    <column id="236" parent="231" name="city">
       <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="236" parent="231" name="count">
+    <column id="237" parent="231" name="street">
       <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="237" parent="231" name="price">
-      <Position>4</Position>
-      <DataType>float|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="238" parent="231" name="orderid">
-      <Position>5</Position>
+      <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="239" parent="231" name="orderitems_orders_orderid_fk">
+    <index id="239" parent="231" name="UK_pysqash5eoj3lri8senun7t96">
       <ColNames>orderid</ColNames>
+      <Unique>1</Unique>
       <Type>btree</Type>
     </index>
     <key id="240" parent="231" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>itemsid</ColNames>
+      <ColNames>addid</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="241" parent="231" name="orderitems_orders_orderid_fk">
+    <key id="241" parent="231" name="UK_pysqash5eoj3lri8senun7t96">
+      <ColNames>orderid</ColNames>
+      <UnderlyingIndexName>UK_pysqash5eoj3lri8senun7t96</UnderlyingIndexName>
+    </key>
+    <foreign-key id="242" parent="231" name="FK_pysqash5eoj3lri8senun7t96">
       <ColNames>orderid</ColNames>
       <RefSchemaName>hibernate</RefSchemaName>
       <RefTableName>orders</RefTableName>
       <RefColNames>orderid</RefColNames>
     </foreign-key>
-    <column id="242" parent="232" name="orderid">
+    <column id="243" parent="232" name="itemsid">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="243" parent="232" name="times">
+    <column id="244" parent="232" name="productid">
       <Position>2</Position>
-      <DataType>datetime|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="244" parent="232" name="addressid">
+    <column id="245" parent="232" name="count">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="232" name="status">
+    <column id="246" parent="232" name="price">
+      <Position>4</Position>
+      <DataType>float|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="247" parent="232" name="orderid">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="248" parent="232" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>itemsid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="249" parent="233" name="orderid">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="250" parent="233" name="times">
+      <Position>2</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="251" parent="233" name="status">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="252" parent="233" name="userid">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="246" parent="232" name="userid">
-      <Position>5</Position>
-      <DataType>int(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="247" parent="232" name="orders_users_userid_fk">
-      <ColNames>userid</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="248" parent="232" name="PRIMARY">
+    <key id="253" parent="233" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>orderid</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="249" parent="232" name="orders_users_userid_fk">
-      <ColNames>userid</ColNames>
-      <RefSchemaName>hibernate</RefSchemaName>
-      <RefTableName>users</RefTableName>
-      <RefColNames>userid</RefColNames>
-    </foreign-key>
-    <column id="250" parent="233" name="userid">
+    <column id="254" parent="234" name="userid">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="233" name="age">
+    <column id="255" parent="234" name="age">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="233" name="bio">
+    <column id="256" parent="234" name="bio">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="233" name="password">
+    <column id="257" parent="234" name="password">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="254" parent="233" name="sex">
+    <column id="258" parent="234" name="sex">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="255" parent="233" name="username">
+    <column id="259" parent="234" name="username">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="256" parent="233" name="PRIMARY">
+    <key id="260" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>userid</ColNames>
       <Primary>1</Primary>

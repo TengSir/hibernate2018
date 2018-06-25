@@ -6,13 +6,10 @@
 
     <class name="com.oracle.model.Orders" table="orders" schema="hibernate">
         <id name="orderid">
-            <column name="orderid" sql-type="int(11)"/>
+            <generator class="increment"></generator>
         </id>
         <property name="times">
-            <column name="times" sql-type="datetime"/>
-        </property>
-        <property name="addressid">
-            <column name="addressid" sql-type="int(11)" not-null="true"/>
+            <column name="times" sql-type="varchar(30)"/>
         </property>
         <property name="status">
             <column name="status" sql-type="int(11)"/>
@@ -20,5 +17,7 @@
         <property name="userid">
             <column name="userid" sql-type="int(11)" not-null="true"/>
         </property>
+
+        <one-to-one name="add" class="com.oracle.model.Address"   outer-join="true"  cascade="all"></one-to-one>
     </class>
 </hibernate-mapping>

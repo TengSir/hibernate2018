@@ -17,7 +17,7 @@
         <!-- 数据库方言-->
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <!-- 是否在SessionFactory创建后，自动创建数据库表，none/create/create-drop/update-->
-        <property name="hbm2ddl.auto">validate</property>
+        <property name="hbm2ddl.auto">none</property>
         <!-- 是否把执行的SQL语句输出到控制台 -->
         <property name="show_sql">true</property>
         <!-- 是否把控制台SQL语句格式化 -->
@@ -26,7 +26,9 @@
 
         <!--让hibernate知道我配置的哪些映射文件在哪里-->
         <mapping resource="User.hbm.xml"/>
-        <mapping resource="Orderitems.hbm.xml"/>
+
         <mapping resource="Orders.hbm.xml"/>
+        <mapping resource="Address.hbm.xml"/>
+        <mapping resource="Orderitems.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
