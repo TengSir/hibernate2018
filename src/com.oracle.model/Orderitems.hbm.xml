@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.oracle.model.Orderitems" table="orderitems" schema="hibernate">
+        <id name="itemsid" column="itemsid">
+            <generator class="native"></generator>
+
+        </id>
+        <property name="productid" column="productid"/>
+        <property name="count" column="count"/>
+        <property name="price" column="price"/>
+        <many-to-one name="ordersByOrderid"  column="orderid" />
+    </class>
+</hibernate-mapping>

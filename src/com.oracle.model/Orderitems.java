@@ -4,6 +4,18 @@ public class Orderitems {
     private Integer itemsid;
     private Integer productid;
     private Integer count;
+    private Double price;
+    private Orders ordersByOrderid;
+
+    @Override
+    public String toString() {
+        return "Orderitems{" +
+                "itemsid=" + itemsid +
+                ", productid=" + productid +
+                ", count=" + count +
+                ", price=" + price +
+                '}';
+    }
 
     public Integer getItemsid() {
         return itemsid;
@@ -37,36 +49,12 @@ public class Orderitems {
         this.price = price;
     }
 
-    public Integer getOrderid() {
-        return orderid;
+
+    public Orders getOrdersByOrderid() {
+        return ordersByOrderid;
     }
 
-    public void setOrderid(Integer orderid) {
-        this.orderid = orderid;
-    }
-
-    private Double price;
-    private Integer orderid;
-
-    public Orderitems(Integer itemsid, Integer productid, Integer count, Double price, Integer orderid) {
-        this.itemsid = itemsid;
-        this.productid = productid;
-        this.count = count;
-        this.price = price;
-        this.orderid = orderid;
-    }
-
-    public Orderitems() {
-    }
-
-    @Override
-    public String toString() {
-        return "Orderitems{" +
-                "itemsid=" + itemsid +
-                ", productid=" + productid +
-                ", count=" + count +
-                ", price=" + price +
-                ", orderid=" + orderid +
-                '}';
+    public void setOrdersByOrderid(Orders ordersByOrderid) {
+        this.ordersByOrderid = ordersByOrderid;
     }
 }

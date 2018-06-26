@@ -25,10 +25,9 @@
 
 
         <!--让hibernate知道我配置的哪些映射文件在哪里-->
-        <mapping resource="User.hbm.xml"/>
-
-        <mapping resource="Orders.hbm.xml"/>
-        <mapping resource="Address.hbm.xml"/>
-        <mapping resource="Orderitems.hbm.xml"/>
+        <mapping resource="com.oracle.model/Address.hbm.xml"/>
+        <mapping resource="com.oracle.model/Orderitems.hbm.xml"/>
+        <mapping resource="com.oracle.model/Orders.hbm.xml"/>
+        <mapping resource="com.oracle.model/Users.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

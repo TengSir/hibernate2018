@@ -1,45 +1,16 @@
 package com.oracle.model;
 
 public class Address {
-    private int addid;
+    private Integer addid;
     private String city;
     private String street;
+    private Orders ordersByAddid;
 
-    private Orders  o;
-
-    @Override
-    public String toString() {
-        return "Address{" +
-                "addid=" + addid +
-                ", city='" + city + '\'' +
-                ", street='" + street + '\'' +
-                '}';
-    }
-
-    public Orders getO() {
-        return o;
-    }
-
-    public void setO(Orders o) {
-        this.o = o;
-    }
-
-    public Address() {
-    }
-
-    public Address(int addid, String city, String street) {
-
-        this.addid = addid;
-        this.city = city;
-        this.street = street;
-    }
-
-    public int getAddid() {
-
+    public Integer getAddid() {
         return addid;
     }
 
-    public void setAddid(int addid) {
+    public void setAddid(Integer addid) {
         this.addid = addid;
     }
 
@@ -57,5 +28,35 @@ public class Address {
 
     public void setStreet(String street) {
         this.street = street;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Address address = (Address) o;
+
+        if (addid != null ? !addid.equals(address.addid) : address.addid != null) return false;
+        if (city != null ? !city.equals(address.city) : address.city != null) return false;
+        if (street != null ? !street.equals(address.street) : address.street != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = addid != null ? addid.hashCode() : 0;
+        result = 31 * result + (city != null ? city.hashCode() : 0);
+        result = 31 * result + (street != null ? street.hashCode() : 0);
+        return result;
+    }
+
+    public Orders getOrdersByAddid() {
+        return ordersByAddid;
+    }
+
+    public void setOrdersByAddid(Orders ordersByAddid) {
+        this.ordersByAddid = ordersByAddid;
     }
 }

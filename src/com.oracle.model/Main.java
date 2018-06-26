@@ -28,7 +28,7 @@ public class Main {
 
         //5.可以直接使用session里面的方法来对数据库操作了
 
-        User  user=new User();
+        Users  user=new Users();
         user.setUsername("jack");
         user.setPassword("rose");
         user.setAge(10);

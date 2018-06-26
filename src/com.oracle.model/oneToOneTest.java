@@ -18,7 +18,11 @@ public class oneToOneTest {
         Transaction tr=session.beginTransaction();
 
 
-        Address  newAdd=new Address();
+
+//        Orders  o=new Orders();
+//        o.setOrderid(4);
+//        session.delete(o);
+       /* Address  newAdd=new Address();
         newAdd.setCity("襄阳");
         newAdd.setStreet("隆重大道");
 
@@ -32,7 +36,7 @@ public class oneToOneTest {
         o.setAdd(newAdd);
         newAdd.setO(o);
         session.save(o);
-
+*/
 
 
         tr.commit();
@@ -40,8 +44,8 @@ public class oneToOneTest {
 
 
 
-//        Orders order=(Orders)session.get(Orders.class,1);
-//        System.out.println(order);
+        Orders order=(Orders)session.get(Orders.class,1);
+        System.out.println(order);
 
 
 
